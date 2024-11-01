@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personal AI Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #5a67d8;
+        }
+        h2 {
+            color: #e53e3e;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .data {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .alert {
+            background: #ffe5e5;
+            color: #d53f8c;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .len {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thank You!</h1>
+    <div class="data">
+        <p>Your data:</p>
+        <p>Name: {{ data.name }}</p>
+        <p>Interests: {{ data.interests }}</p>
+        <p>Preferences: {{ data.preferences }}</p>
+    </div>
+    <a href="{%url 'homepage'%}">return to home</a>
+
+    <h2>Prank Alert!</h2>
+    <p class="alert" id="prank-message">{{ prank.prank }}</p>
+    <p>Length of the string: <span class="len" id="prank-length">{{ prank.len }}</span></p>
+
+    <script>
+        // Optional JavaScript to add interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            const prankMessage = document.getElementById('prank-message');
+            const prankLength = document.getElementById('prank-length');
+            
+            // You can add any fun animations or effects here
+            prankMessage.style.transition = "all 0.5s ease";
+            prankMessage.style.opacity = 0;
+            setTimeout(() => {
+                prankMessage.style.opacity = 1;
+            }, 100);
+        });
+    </script>
+</body>
+</html>

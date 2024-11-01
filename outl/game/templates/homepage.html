@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Prank AI Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #5a67d8;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .welcome {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .welcome h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .welcome p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Prank AI Bot</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="{%url 'loading'%}">reload</a>
+            <a href="{%url 'index'%}">Create Your Bot</a>
+        </nav>
+    </header>
+
+    <div class="welcome">
+        <h1>Welcome to Prank AI Bot!</h1>
+        <p>Are you ready to have some fun? Create your very own personal AI bot and see what kind of hilarious responses you can generate.</p>
+        <p>Join us on this playful journey and enjoy the surprises along the way!</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Prank AI Bot. All rights reserved.</p>
+    </footer>
+</body>
+</html>
