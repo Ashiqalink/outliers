@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Something Wonderful</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(135deg, #f0f0f0, #e0e7ff); /* Added gradient */
+        }
+
+        .button {
+            padding: 1.5rem 3rem;
+            font-size: 1.25rem;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .loader {
+            display: none;
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #6366f1;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            background: conic-gradient(#6366f1, #a855f7, #ec4899, #6366f1); /* Added colorful gradient */
+        }
+
+        .message {
+            display: none;
+            font-size: 5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .trex {
+            display: none; /* Hide the T-Rex by default */
+            width: 100px; /* Adjust size as needed */
+            animation: run 1s infinite linear;
+            position: absolute;
+            top: 20px; /* Position T-Rex at the top */
+            left: 20px; /* Start on the top left */
+            margin-bottom: 20px; /* Space between T-Rex and message */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes run {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(300px); }
+        }
+
+        @media (max-width: 768px) {
+            .message {
+                font-size: 3rem;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="button">Press to see something wonderful</button>
+    <div class="loader"></div>
+    <img src="https://media1.tenor.com/m/y9iRgR0XX8cAAAAd/decentdao-dao.gif" alt="Running T-Rex" class="trex">
+    <div class="message">HELLO WORLD</div>
+
+    <script>
+        const button = document.querySelector('.button');
+        const loader = document.querySelector('.loader');
+        const message = document.querySelector('.message');
+        const trex = document.querySelector('.trex');
+
+        button.addEventListener('click', () => {
+            // Hide button, show loader and T-Rex
+            button.style.display = 'none';
+            loader.style.display = 'block';
+            trex.style.display = 'block'; // Show T-Rex
+
+            // Move T-Rex to the top right after loading
+            setTimeout(() => {
+                trex.style.left = 'auto'; // Reset left
+                trex.style.right = '20px'; // Move to the top right
+            }, 0); // Immediate execution
+
+            // Simulate loading time
+            setTimeout(() => {
+                // Hide loader and T-Rex, show message
+                loader.style.display = 'none';
+                trex.style.display = 'none'; // Hide T-Rex
+                message.style.display = 'block';
+            }, 2000); // 2 second loading time
+        });
+    </script>
+</body>
+</html>
